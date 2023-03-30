@@ -1,9 +1,9 @@
 
 
 function comprobarMensaje (mensaje){
-    if (mensaje == mensaje.toUpperCase()){
+    if (mensaje === mensaje.toUpperCase()){
         alert("Está formada solo por mayúsculas.");
-    }else if (mensaje == mensaje.toLowerCase()){
+    }else if (mensaje === mensaje.toLowerCase()){
         alert("Está formada solo por minúsculas.");
     }else{
         alert("Esta formado tanto por mayúsculas como minúsculas.");
