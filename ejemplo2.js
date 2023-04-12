@@ -7,9 +7,25 @@ function buscarEnlaces(){
 function buscarEnlaces2(){
     let enlace = document.querySelector('#enlaceColegio');
     alert(enlace.innerHTML);
-    let parrafos = document.querySelectorAll('a+p');
-    for(let parr of parrafos)
-        alert(parr.innerHTML);
+    let enlaces = document.querySelectorAll('a');
+    for(let enlace of enlaces){
+        enlace.nextElementSibling.innerHTML = "parrafo modificado";
+        
+        let siguienteParrafo = enlace.nextElementSibling;
+        let primerHjioParrafo = siguienteParrafo.children[0];
+    }
+}
+//buscar pornor89// buscarEnlaces2();
+
+function crearParrafo(contenido){
+
+    let parrafoNuevo = document.createElement('p');
+    parrafoNuevo.innerHTML = contenido;
+
+    /*let elBody = document.querySelector('body');
+    elBody.append(parrafoNuevo);*/
+
+    document.body.append(parrafoNuevo);
 }
 
-buscarEnlaces2();
+crearParrafo(prompt('¿Qué quieres escribir?'));
