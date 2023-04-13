@@ -1,3 +1,16 @@
+let boton = document.getElementById('boton');
+boton.addEventListener('click', crearAlumno);
+let indice = 1;
+
+function crearAlumno(){
+    let ultimaFila = document.querySelector('tr:last-child');
+    let nuevaFila = ultimaFila.cloneNode(true);
+    nuevaFila.firstElementChild.innerHTML = prompt('Indique el nombre del alumno.');
+    nuevaFila.lastElementChild.innerHTML = ++indice;
+
+    document.querySelector('table').append(nuevaFila);
+}
+
 function buscarEnlaces(){
     let enlace = document.getElementById('enlaceColegio');
     alert(enlace.href);
@@ -15,7 +28,7 @@ function buscarEnlaces2(){
         let primerHjioParrafo = siguienteParrafo.children[0];
     }
 }
-//buscar pornor89// buscarEnlaces2();
+// buscarEnlaces2();
 
 function crearParrafo(contenido){
 
@@ -28,4 +41,17 @@ function crearParrafo(contenido){
     document.body.append(parrafoNuevo);
 }
 
-crearParrafo(prompt('¿Qué quieres escribir?'));
+//crearParrafo();
+
+function crearParrafo2(){
+
+    let parrafoNuevo = document.createElement('p');
+    let contenido = prompt('¿Qué quieres escribir?');
+    parrafoNuevo.innerHTML = contenido;
+
+    // let elBody = document.querySelector('body');
+    //elBody.append(parrafoNuevo);
+    document.body.append(parrafoNuevo);
+}
+
+// crearParrafo2();
